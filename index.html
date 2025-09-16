@@ -1,91 +1,157 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Kennedy Maturure — Portfolio</title>
-<style>
-  body {font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#111; margin:0; background:#f7f7fb;}
-  .container{max-width:920px;margin:40px auto;padding:24px;}
-  header{display:flex;justify-content:space-between;align-items:flex-start}
-  h1{margin:0;font-size:28px}
-  p.lead{color:#333; margin:8px 0 14px}
-  .buttons a{margin-right:10px;text-decoration:none;padding:8px 12px;border-radius:6px;border:1px solid #111;color:#111}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:24px}
-  .card{background:white;padding:16px;border-radius:8px;box-shadow:0 6px 18px rgba(17,17,17,0.06)}
-  .tech{font-size:12px;color:#666;margin-top:10px}
-  footer{margin-top:32px;font-size:13px;color:#666}
-  a.small{color:#0b5cff;text-decoration:none}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kennedy Maturure — Full-Stack & ML Engineer</title>
+  <meta name="description" content="Kennedy Maturure — MS Computer Science. Full-Stack & ML Engineer. Reproducible ML demos, APIs, and product prototypes. Incoming co-op at Kanoa, Inc. (Sept 2025)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0b5cff; /* primary accent */
+      --radius:12px;
+      --maxw:980px;
+      --glass: rgba(255,255,255,0.7);
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:#0f1724;background:linear-gradient(180deg,#f7f8fc 0%, var(--bg) 100%); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+    .wrap{max-width:var(--maxw); margin:36px auto; padding:28px;}
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between}
+    .hero-left{}
+    h1{margin:0;font-size:32px;line-height:1.02;font-weight:800;color:#0b1b3b}
+    .sub{color:var(--muted);margin-top:8px;font-size:14px}
+    .hero-ctas{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{background:var(--card);border:1px solid rgba(11,92,255,0.08);padding:10px 14px;border-radius:10px;text-decoration:none;color:#071537;font-weight:600;box-shadow:0 6px 18px rgba(11,40,90,0.04)}
+    .btn-primary{background:var(--accent);color:white;border:none;box-shadow:0 8px 24px rgba(11,92,255,0.12)}
+    .meta{font-size:13px;color:var(--muted)}
+    .hero-right{text-align:right}
+    .links a{display:inline-block;margin-left:8px;color:var(--muted);text-decoration:none;font-size:13px}
+    main{margin-top:26px}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+    .pill{background:transparent;border:1px solid rgba(15,23,36,0.06);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:22px}
+    .card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 8px 28px rgba(12,20,56,0.06);border:1px solid rgba(15,23,36,0.03)}
+    .project-title{font-weight:700;margin:0;font-size:16px;color:#071537}
+    .project-desc{color:var(--muted);font-size:13px;margin-top:6px}
+    .project-tech{font-size:12px;color:var(--muted);margin-top:10px}
+    .project-links{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+    .badge{font-size:11px;padding:6px 8px;border-radius:8px;background:rgba(11,92,255,0.08);color:var(--accent);font-weight:600}
+    footer{margin-top:28px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center}
+    .small{font-size:12px;color:var(--muted)}
+    /* responsive */
+    @media (max-width:720px){
+      header{flex-direction:column;align-items:flex-start}
+      .hero-right{text-align:left;margin-top:14px}
+      .wrap{padding:16px;margin:18px auto}
+    }
+    /* subtle hover */
+    a.btn:hover{transform:translateY(-2px);transition:all .18s ease}
+    .card a{color:var(--accent);text-decoration:none;font-weight:600}
+  </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrap" role="main">
     <header>
-      <div>
+      <div class="hero-left">
         <h1>Kennedy Maturure</h1>
-        <div class="lead">MS Computer Science — Full-Stack & ML Engineer · Philadelphia, PA</div>
-        <div class="lead">I build reproducible ML systems, APIs and lightweight dashboards. Incoming Full-Stack Co-op at Kanoa, Inc. (Sept 2025).</div>
-        <div class="buttons" style="margin-top:8px">
-          <a href="#projects">View projects</a>
-          <a href="./resume/KennedyMaturureResume.pdf" target="_blank">Download résumé (PDF)</a>
-          <a href="mailto:kjm478@drexel.edu">Contact</a>
+        <div class="sub">MS Computer Science — Full-Stack & ML Engineer · Philadelphia, PA</div>
+        <div class="sub" style="margin-top:6px">I build reproducible ML prototypes, production-ready APIs, and product-first demos. Incoming Full-Stack Co-op at Kanoa, Inc. (Sept 2025).</div>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="/resume/KennedyMaturure_Resume.pdf" target="_blank" rel="noopener">Download résumé (PDF)</a>
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" href="mailto:kjm478@drexel.edu">Email</a>
+        </div>
+
+        <div class="skills" aria-label="Skills">
+          <span class="pill">Python</span>
+          <span class="pill">Streamlit / Gradio</span>
+          <span class="pill">SQL / Postgres</span>
+          <span class="pill">React / JS</span>
+          <span class="pill">Docker</span>
+          <span class="pill">RAG / Vector DBs</span>
+          <span class="pill">CI / GitHub Actions</span>
         </div>
       </div>
-      <div style="text-align:right">
-        <div style="font-size:13px;color:#666">Links</div>
-        <div style="margin-top:8px">
-          <a class="small" href="https://github.com/Kjm478" target="_blank">GitHub</a> ·
-          <a class="small" href="https://www.linkedin.com/in/kennedy-maturure" target="_blank">LinkedIn</a>
+
+      <div class="hero-right">
+        <div class="meta">Links</div>
+        <div class="links" style="margin-top:8px">
+          <a href="https://github.com/Kjm478" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/kennedy-maturure" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </header>
 
-    <section id="projects">
-      <h2 style="margin-top:28px">Featured projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>AI Personal Fitness Tool</h3>
-          <div>Streamlit app — RAG + Langflow + Astra DB for personalized macros & coaching.</div>
-          <div class="tech">Streamlit · LangFlow · Astra DB · Python</div>
-          <div style="margin-top:10px">
-            <a href="https://github.com/Kjm478/Personal-Fitness-Tool" target="_blank">Code</a> ·
-            <a href="#" id="fitness-demo-link" target="_blank">Live demo (add after deploying)</a>
+    <main>
+      <h2 id="projects" style="font-size:18px;margin:0 0 8px 0">Featured projects</h2>
+
+      <div class="grid" role="list">
+        <article class="card" role="listitem" aria-labelledby="p1">
+          <div id="p1" class="project-title">AI Personal Fitness Tool <span style="font-weight:600;color:var(--muted);font-size:12px">· Lead project</span></div>
+          <div class="project-desc">RAG-style demo that grounds LLM answers in user notes to produce personalized macro recommendations. Reproducible Colab demo included (no keys).</div>
+          <div class="project-tech">Streamlit · TF-IDF/FAISS · Colab · Python</div>
+          <div class="project-links">
+            <a class="btn" href="https://github.com/Kjm478/Personal-Fitness-Tool" target="_blank">Code</a>
+            <a class="btn" href="https://github.com/Kjm478/Personal-Fitness-Tool/blob/main/case-study.md" target="_blank">Case study</a>
+            <span class="badge">Quickstart ≤10m</span>
+            <span class="badge">Colab</span>
           </div>
-        </div>
+        </article>
 
-        <div class="card">
-          <h3>WTCP_Q</h3>
-          <div>Telemetry protocol prototype: secure handshake, fixed-rate telemetry, remote control and emergency handling.</div>
-          <div class="tech">Python · asyncio · TLS</div>
-          <div style="margin-top:10px"><a href="https://github.com/Kjm478/WTCP_Q" target="_blank">Code</a></div>
-        </div>
+        <article class="card" role="listitem" aria-labelledby="p2">
+          <div id="p2" class="project-title">WTCP_Q</div>
+          <div class="project-desc">Telemetry protocol prototype with secure handshake, fixed-rate telemetry, remote control & emergency handling.</div>
+          <div class="project-tech">Python · asyncio · TLS</div>
+          <div class="project-links">
+            <a class="btn" href="https://github.com/Kjm478/WTCP_Q" target="_blank">Code</a>
+            <a class="btn" href="https://github.com/Kjm478/WTCP_Q#readme" target="_blank">Readme</a>
+            <span class="badge">Protocol prototype</span>
+          </div>
+        </article>
 
-        <div class="card">
-          <h3>AI Recruiter Agent</h3>
-          <div>RAG + multi-agent pipelines for candidate ranking, summaries & interview question generation.</div>
-          <div class="tech">LangChain · FAISS · Python</div>
-          <div style="margin-top:10px"><a href="https://github.com/Kjm478/AI-recruiter-agent-" target="_blank">Code</a></div>
-        </div>
+        <article class="card" role="listitem" aria-labelledby="p3">
+          <div id="p3" class="project-title">AI Recruiter Agent</div>
+          <div class="project-desc">RAG + multi-agent pipeline for candidate shortlisting, summary generation, and automated interview Qs.</div>
+          <div class="project-tech">LangChain · FAISS · Python</div>
+          <div class="project-links">
+            <a class="btn" href="https://github.com/Kjm478/AI-recruiter-agent-" target="_blank">Code</a>
+            <a class="btn" href="https://github.com/Kjm478/AI-recruiter-agent-/blob/main/case-study.md" target="_blank">Case study</a>
+            <span class="badge">Quickstart</span>
+          </div>
+        </article>
 
-        <div class="card">
-          <h3>Diabetic Prediction</h3>
-          <div>PCA + ensemble models for diabetes risk classification using BRFSS-like data.</div>
-          <div class="tech">scikit-learn · pandas · Python</div>
-          <div style="margin-top:10px"><a href="https://github.com/Kjm478/Diabetic-prediction" target="_blank">Code</a></div>
-        </div>
+        <article class="card" role="listitem" aria-labelledby="p4">
+          <div id="p4" class="project-title">Diabetic Prediction</div>
+          <div class="project-desc">PCA + ensemble models for diabetes risk classification and reproducible evaluation on BRFSS-like features.</div>
+          <div class="project-tech">scikit-learn · Pandas · Python</div>
+          <div class="project-links">
+            <a class="btn" href="https://github.com/Kjm478/Diabetic-prediction" target="_blank">Code</a>
+            <a class="btn" href="https://github.com/Kjm478/Diabetic-prediction#readme" target="_blank">Readme</a>
+            <span class="badge">Eval scripts</span>
+          </div>
+        </article>
 
-        <div class="card">
-          <h3>Butterfly Classification</h3>
-          <div>Transfer-learning image classifier (transfer learning + augmentation).</div>
-          <div class="tech">PyTorch/TensorFlow · OpenCV</div>
-          <div style="margin-top:10px"><a href="https://github.com/Kjm478/Butterfly_classification" target="_blank">Code</a></div>
-        </div>
+        <article class="card" role="listitem" aria-labelledby="p5">
+          <div id="p5" class="project-title">Butterfly Classification</div>
+          <div class="project-desc">Transfer-learning image classifier with augmentation and inference scripts.</div>
+          <div class="project-tech">PyTorch / TF · OpenCV</div>
+          <div class="project-links">
+            <a class="btn" href="https://github.com/Kjm478/Butterfly_classification" target="_blank">Code</a>
+            <a class="btn" href="https://github.com/Kjm478/Butterfly_classification#readme" target="_blank">Readme</a>
+            <span class="badge">Transfer learning</span>
+          </div>
+        </article>
       </div>
-    </section>
+    </main>
 
     <footer>
-      <div>Built & maintained by Kennedy Maturure · <a class="small" href="mailto:kjm478@drexel.edu">kjm478@drexel.edu</a></div>
-      <div style="margin-top:8px">Tip: click “Download résumé” to view my one-page CV.</div>
+      <div class="small">Built & maintained by Kennedy Maturure · <a href="mailto:kjm478@drexel.edu">kjm478@drexel.edu</a></div>
+      <div class="small">Tip: Case studies and Colab demos are linked from each project card.</div>
     </footer>
   </div>
 </body>
